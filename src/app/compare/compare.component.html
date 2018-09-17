@@ -5,7 +5,7 @@
   </tr>
   <tr *ngFor="let lawelement of dataService.lawelementArray">
       <td width="50%">
-        <mat-card style="margin: 5px;" *ngIf="lawelement.claimant !== null">
+        <mat-card style="margin: 5px;" *ngIf="lawelement.claimant !== null" [class.undisputed]="lawelement.disputed === false" [class.disputed]="lawelement.disputed === true">
           <div class="headline">Fact</div>
           <div class="content">{{lawelement.claimant.fact}}</div>
           <div class="headline">Proof</div>
@@ -13,12 +13,12 @@
           <div class="headline">Legal opinion</div>
           <div class="content">{{lawelement.claimant.legalOpinion}}</div>
         </mat-card>
-        <div *ngIf="lawelement.claimant === null && !lawelement.disputed" class="checkItem">
+        <div *ngIf="lawelement.claimant === null && lawelement.disputed == false" class="checkItem">
             <mat-icon style="font-size: 48px;">check</mat-icon>
         </div>
       </td>
       <td width="50%">
-        <mat-card *ngIf="lawelement.defendant !== null">
+        <mat-card *ngIf="lawelement.defendant !== null" [class.undisputed]="lawelement.disputed === false" [class.disputed]="lawelement.disputed === true">
             <div class="headline">Fact</div>
             <div class="content">{{lawelement.defendant.fact}}</div>
             <div class="headline">Proof</div>
@@ -26,9 +26,10 @@
             <div class="headline">Legal opinion</div>
             <div class="content">{{lawelement.defendant.legalOpinion}}</div>
         </mat-card>
-        <div *ngIf="lawelement.defendant === null && !lawelement.disputed" class="checkItem">
+        <div *ngIf="lawelement.defendant === null && lawelement.disputed == false" class="checkItem">
             <mat-icon style="font-size: 48px;">check</mat-icon>
         </div>
       </td>
     </tr>
 </table>
+<button (click)="dataService.setNext()">Next</button>

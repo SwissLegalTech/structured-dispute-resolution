@@ -7,10 +7,11 @@ import { Lawelement } from './lawelement';
 export class DataService {
 
   public lawelementArray: Lawelement[] = [];
-  public selectedIndex: number = 0;
+  public selectedIndex: number = -1;
   public showcaseArray = [];
 
   constructor() {
+    /*
     this.lawelementArray = [
       {
         claimant: {
@@ -58,6 +59,7 @@ export class DataService {
         }
       }
     ];
+    */
 
     this.showcaseArray = [
       [
@@ -67,6 +69,72 @@ export class DataService {
             time: null, // 4th November
             proof: "Rental Agreement",
             legalOpinion: "This is a lease contract"
+          },
+          disputed: null,
+          defendant: null
+        }
+      ],
+      [
+        {
+          claimant: {
+            fact: "I offered the respondend my appartment in Bahnhofstraße",
+            time: null, // 4th November
+            proof: "Rental Agreement",
+            legalOpinion: "This is a lease contract"
+          },
+          disputed: null,
+          defendant: null
+        },
+        {
+          claimant: {
+            fact: "We agreed upon a rent of 10.000 € a month",
+            time: null, // 4th November
+            proof: "Rental Agreement",
+            legalOpinion: "The respondant is obliged to pay the rent"
+          },
+          disputed: null,
+          defendant: null
+        }
+      ],
+      [
+        {
+          claimant: {
+            fact: "I offered the respondend my appartment in Bahnhofstraße",
+            time: null, // 4th November
+            proof: "Rental Agreement",
+            legalOpinion: "This is a lease contract"
+          },
+          disputed: false,
+          defendant: null
+        },
+        {
+          claimant: {
+            fact: "We agreed upon a rent of 10.000 € a month",
+            time: null, // 4th November
+            proof: "Rental Agreement",
+            legalOpinion: "The respondant is obliged to pay the rent"
+          },
+          disputed: null,
+          defendant: null
+        }
+      ],
+      [
+        {
+          claimant: {
+            fact: "I offered the respondend my appartment in Bahnhofstraße",
+            time: null, // 4th November
+            proof: "Rental Agreement",
+            legalOpinion: "This is a lease contract"
+          },
+          disputed: false,
+          defendant: null
+        },
+        {
+          claimant: {
+            fact: "We agreed upon a rent of 10.000 € a month",
+            time: null, // 4th November
+            proof: "Rental Agreement",
+            legalOpinion: "The respondant is obliged to pay the rent"
           },
           disputed: false,
           defendant: null
@@ -92,6 +160,58 @@ export class DataService {
           },
           disputed: false,
           defendant: null
+        },
+        {
+          claimant: null,
+          disputed: null,
+          defendant: {
+            fact: "The heating did not work",
+            time: null, // 1. - 31. Dezember
+            proof: "My boyfriend",
+            legalOpinion: ""
+          }
+        }
+      ],
+      [
+        {
+          claimant: {
+            fact: "I offered the respondend my appartment in Bahnhofstraße",
+            time: null, // 4th November
+            proof: "Rental Agreement",
+            legalOpinion: "This is a lease contract"
+          },
+          disputed: false,
+          defendant: null
+        },
+        {
+          claimant: {
+            fact: "We agreed upon a rent of 10.000 € a month",
+            time: null, // 4th November
+            proof: "Rental Agreement",
+            legalOpinion: "The respondant is obliged to pay the rent"
+          },
+          disputed: false,
+          defendant: null
+        },
+        {
+          claimant: null,
+          disputed: null,
+          defendant: {
+            fact: "The heating did not work",
+            time: null, // 1. - 31. Dezember
+            proof: "My boyfriend",
+            legalOpinion: ""
+          }
+        },
+        {
+          claimant: null,
+          disputed: null,
+          defendant: {
+            fact: "It was so cold, I had to move into a hotel and paid 10.000 € for it.",
+            time: null, // 7. bis 31. Dezember
+            proof: "Hotel bill",
+            legalOpinion: "I can set off the lease"
+          }
         }
       ],
       [
@@ -127,7 +247,7 @@ export class DataService {
         },
         {
           claimant: null,
-          disputed: true,
+          disputed: null,
           defendant: {
             fact: "It was so cold, I had to move into a hotel and paid 10.000 € for it.",
             time: null, // 7. bis 31. Dezember
@@ -187,5 +307,10 @@ export class DataService {
   }
   setSelectedIndex(index: number) {
     this.selectedIndex = index;
+  }
+
+  setNext() {
+    this.selectedIndex = (this.selectedIndex+1)%this.showcaseArray.length;
+    this.lawelementArray = this.showcaseArray[this.selectedIndex];
   }
 }
