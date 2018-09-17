@@ -1,0 +1,22 @@
+<div>
+    <form class="example-form">
+        <mat-form-field class="example-full-width" style="width: 100%">
+            <input matInput placeholder="Fact">
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width" style="width: 100%">
+            <input matInput placeholder="Proof">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width" style="width: 100%">
+            <input matInput placeholder="Legal opinion">
+        </mat-form-field>
+    </form>
+    <button mat-raised-button color="black">Add fact</button>
+</div>

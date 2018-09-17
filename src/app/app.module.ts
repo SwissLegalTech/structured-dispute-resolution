@@ -7,18 +7,23 @@ import {
   MatCheckboxModule,
   MatIconModule,
   MatCardModule,
-  MatTableModule
+  MatTableModule,
+  MatDialogModule,
+  MatInputModule,
+  MatDatepickerModule,
+  MatNativeDateModule
 } from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { TbmComponent } from './tbm/tbm.component';
-import { CompareComponent } from './compare/compare.component';
+import { CompareComponent, DialogOverviewExampleDialog } from './compare/compare.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TbmComponent,
-    CompareComponent
+    CompareComponent,
+    DialogOverviewExampleDialog
   ],
   imports: [
     BrowserModule,
@@ -27,9 +32,16 @@ import { CompareComponent } from './compare/compare.component';
     MatCheckboxModule,
     MatIconModule,
     MatCardModule,
-    MatTableModule
+    MatTableModule,
+    MatDialogModule,
+    MatInputModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
-  providers: [],
+  entryComponents: [
+    DialogOverviewExampleDialog
+  ],
+  providers: [], //{provide: MAT_DATE_LOCALE, useValue: "de-DE"}
   bootstrap: [AppComponent]
 })
 export class AppModule { }
