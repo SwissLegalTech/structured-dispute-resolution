@@ -9,6 +9,7 @@ import { DataService } from '../data.service';
 export class CompareComponent implements OnInit {
 
   private dataService;
+  private state = "claimant";
 
   constructor(_data: DataService) {
     this.dataService = _data;
