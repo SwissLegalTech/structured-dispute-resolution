@@ -1,14 +1,16 @@
 <table style="width:100%">
   <tr>
-    <th width="50%" class="tableHeadline">Claimant</th>
-    <th width="50%" class="tableHeadline">Defendant</th>
+    <th width="50%" class="tableHeadline">claimant</th>
+    <th width="50%" class="tableHeadline">defendant</th>
   </tr>
-  <tr *ngFor="let lawelement of dataService.lawelementArray">
+  <tr *ngFor="let lawelement of dataService.lawelementArray; let i = index;">
     <td width="50%">
       <mat-card style="margin: 5px;" *ngIf="lawelement.claimant !== null" [class.undisputed]="lawelement.disputed === false"
         [class.disputed]="lawelement.disputed === true">
         <div class="headline">Fact</div>
         <div class="content">{{lawelement.claimant.fact}}</div>
+        <div class="headline">Time</div>
+        <div class="content">{{lawelement.claimant.time | date:'mediumDate'}}</div>
         <div class="headline">Proof</div>
         <div class="content">{{lawelement.claimant.proof}}</div>
         <div class="headline">Legal opinion</div>
@@ -17,6 +19,12 @@
       <div *ngIf="lawelement.claimant === null && lawelement.disputed == false" class="checkItem">
         <mat-icon style="font-size: 48px;">check</mat-icon>
       </div>
+      <div *ngIf="state === 'claimant'">
+          <div *ngIf="lawelement.disputed === null && lawIndex === i">
+              <button mat-raised-button color="black" (click)="agreeToFact(lawelement)">Agree</button>
+              <button mat-raised-button color="black" (click)="openDialog()">Disagree</button>
+          </div>
+        </div>
     </td>
     <td width="50%">
       <mat-card *ngIf="lawelement.defendant !== null" [class.undisputed]="lawelement.disputed === false"
@@ -31,19 +39,30 @@
       <div *ngIf="lawelement.defendant === null && lawelement.disputed == false" class="checkItem">
         <mat-icon style="font-size: 48px;">check</mat-icon>
       </div>
+      <div *ngIf="state === 'defendant'">
+        <div *ngIf="lawelement.disputed === null && lawIndex === i">
+            <button mat-raised-button color="black" (click)="agreeToFact(lawelement)">Agree</button>
+            <button mat-raised-button color="black" (click)="openDialog()">Disagree</button>
+        </div>
+      </div>
     </td>
   </tr>
   <tr>
     <td width="50%">
-      <div class="buttons">
+      <div class="buttons" *ngIf="state === 'claimant'">
         <div class="expanded"></div>
         <div><button mat-fab color="black" (click)="openDialog()">Add</button></div>
+        <div><button mat-raised-button color="black" (click)="submitToDefendant()">Submit to defendant</button></div>
         <div class="expanded"></div>
       </div>
     </td>
     <td width="50%">
-
+        <div class="buttons" *ngIf="state === 'defendant'">
+            <div class="expanded"></div>
+            <div><button mat-fab color="black" (click)="openDialog()">Add</button></div>
+            <div><button mat-raised-button color="black" (click)="submitToClaimant()">Submit to claimant</button></div>
+            <div class="expanded"></div>
+          </div>
     </td>
   </tr>
 </table>
-<!--button (click)="dataService.setNext()">Next</button-->

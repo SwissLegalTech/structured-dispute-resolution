@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule } from '@angular/forms';
 
 import {
   MatButtonModule, 
@@ -28,6 +29,7 @@ import { CompareComponent, DialogOverviewExampleDialog } from './compare/compare
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    FormsModule,
     MatButtonModule, 
     MatCheckboxModule,
     MatIconModule,

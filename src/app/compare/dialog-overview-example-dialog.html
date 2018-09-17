@@ -1,22 +1,22 @@
 <div>
     <form class="example-form">
         <mat-form-field class="example-full-width" style="width: 100%">
-            <input matInput placeholder="Fact">
+            <input matInput placeholder="Fact" [(ngModel)]="fact" [ngModelOptions]="{standalone: true}">
         </mat-form-field>
 
         <mat-form-field>
-            <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+            <input matInput [matDatepicker]="picker" placeholder="Choose a date" [(ngModel)]="time" [ngModelOptions]="{standalone: true}">
             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>
 
         <mat-form-field class="example-full-width" style="width: 100%">
-            <input matInput placeholder="Proof">
+            <input matInput placeholder="Proof" [(ngModel)]="proof" [ngModelOptions]="{standalone: true}">
         </mat-form-field>
 
         <mat-form-field class="example-full-width" style="width: 100%">
-            <input matInput placeholder="Legal opinion">
+            <input matInput placeholder="Legal opinion" [(ngModel)]="legalOpinion" [ngModelOptions]="{standalone: true}">
         </mat-form-field>
     </form>
-    <button mat-raised-button color="black">Add fact</button>
+    <button mat-raised-button color="black" (click)="closeDialog()">Add fact</button>
 </div>
