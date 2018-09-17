@@ -6,7 +6,8 @@ import {
   MatButtonModule, 
   MatCheckboxModule,
   MatIconModule,
-  MatCardModule
+  MatCardModule,
+  MatTableModule
 } from '@angular/material';
 
 import { AppComponent } from './app.component';
@@ -25,7 +26,8 @@ import { CompareComponent } from './compare/compare.component';
     MatButtonModule, 
     MatCheckboxModule,
     MatIconModule,
-    MatCardModule
+    MatCardModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

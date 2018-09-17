@@ -8,7 +8,11 @@ import { DataService } from '../data.service';
 })
 export class CompareComponent implements OnInit {
 
-  constructor(_data: DataService) { }
+  private dataService;
+
+  constructor(_data: DataService) {
+    this.dataService = _data;
+  }
 
   ngOnInit() {
   }

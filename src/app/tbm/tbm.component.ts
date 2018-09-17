@@ -22,6 +22,7 @@ export class TbmComponent implements OnInit {
   }
 
   selectDocument(index: number) {
+    this.dataService.setSelectedIndex(index);
     console.log("select document "+index);
   }
 }

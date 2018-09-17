@@ -2,7 +2,7 @@
     background-color: bisque;
     display: flex;
     flex-grow: 1;
-    flex-flow: row;
+    flex-flow: column;
 }
 
 .plaintiff {

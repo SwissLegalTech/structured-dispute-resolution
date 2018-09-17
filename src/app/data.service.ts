@@ -6,41 +6,44 @@ import { Tbm } from './tbm';
 })
 export class DataService {
   public tbm_array: Tbm[] = [];
+  public selectedIndex: number = 0;
 
   constructor() {
     this.tbm_array = [
       {
-        title: "title 1",
+        title: "Lease Contract",
         subpoints: [
           {
+            title: "subpoint 1",
             plaintiff: {
-              facts: "fact of is blabla",
-              legal: "legal is blabla",
+              facts: "The Claimant and the Respondend have entered into a lease agreement.",
+              legal: "There is a lease contract between the parties according to Sec. 535 BGB.",
               proofs: []
             },
             defendant: {
-              facts: "fact is blabla",
-              legal: "legal is blabla",
+              facts: "Yes - undisputed.",
+              legal: "",
               proofs: []
             },
             judge: {
               temp: "judgecomment"
             }
-          }
+          },
         ]
       },
       {
-        title: "title 2",
+        title: "No heating",
         subpoints: [
           {
+            title: "subpoint 2",
             plaintiff: {
-              facts: "fact of 222 is blabla",
-              legal: "legal 2222 is blabla",
+              facts: "The heating did not work.",
+              legal: "",
               proofs: []
             },
             defendant: {
-              facts: "fact 222 is blabla",
-              legal: "legal  222 is blabla",
+              facts: "No, the heating did work properly.",
+              legal: "",
               proofs: []
             },
             judge: {
@@ -53,6 +56,7 @@ export class DataService {
         title: "title 3",
         subpoints: [
           {
+            title: "subpoint 3",
             plaintiff: {
               facts: "fact of 3333 is blabla",
               legal: "legal 3333 is blabla",
@@ -70,5 +74,8 @@ export class DataService {
         ]
       }
     ]
+  }
+  setSelectedIndex(index: number) {
+    this.selectedIndex = index;
   }
 }
