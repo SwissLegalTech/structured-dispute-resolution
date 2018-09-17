@@ -12,4 +12,8 @@ export class TbmComponent implements OnInit {
   ngOnInit() {
   }
 
+  clickAddDocument() {
+    console.log("document added");
+  }
+
 }

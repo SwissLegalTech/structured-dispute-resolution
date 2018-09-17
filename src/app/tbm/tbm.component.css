@@ -1,4 +1,6 @@
 :host{
     background-color: aqua;
     min-width: 200px;
+    display: flex;
+    flex-flow: column;
 }
