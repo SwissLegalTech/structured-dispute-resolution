@@ -21,4 +21,7 @@ export class TbmComponent implements OnInit {
     console.log("document added");
   }
 
+  selectDocument(index: number) {
+    console.log("select document "+index);
+  }
 }

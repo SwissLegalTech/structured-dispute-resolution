@@ -1,4 +1,21 @@
-:host{
+:host {
     background-color: bisque;
+    display: flex;
     flex-grow: 1;
+    flex-flow: row;
+}
+
+.plaintiff {
+    flex-grow: 5;
+    background-color: blueviolet;
+}
+
+.judge {
+    flex-grow: 1;
+    background-color: brown;
+}
+
+.defendant {
+    flex-grow: 5;
+    background-color: bisque;
 }

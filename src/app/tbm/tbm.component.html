@@ -1,4 +1,4 @@
-<button mat-raised-button style="margin: 5px;" *ngFor="let item of dataService.tbm_array">
+<button mat-raised-button style="margin: 5px;" *ngFor="let item of dataService.tbm_array; let i = index" (click)="selectDocument(i)">
   {{item.title}}
 </button>
 <div>
