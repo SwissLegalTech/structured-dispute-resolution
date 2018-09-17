@@ -5,7 +5,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
   MatButtonModule, 
   MatCheckboxModule,
-  MatIconModule
+  MatIconModule,
+  MatCardModule
 } from '@angular/material';
 
 import { AppComponent } from './app.component';
@@ -23,7 +24,8 @@ import { CompareComponent } from './compare/compare.component';
     BrowserAnimationsModule,
     MatButtonModule, 
     MatCheckboxModule,
-    MatIconModule
+    MatIconModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
