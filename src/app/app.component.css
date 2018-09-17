@@ -1,0 +1,7 @@
+.mainwindow{
+    width: 800px;
+    height: 600px;
+    background-color: black;
+    display: flex;
+    flex-flow: row;
+}

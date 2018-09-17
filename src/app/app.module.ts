@@ -8,10 +8,14 @@ import {
 } from '@angular/material';
 
 import { AppComponent } from './app.component';
+import { TbmComponent } from './tbm/tbm.component';
+import { CompareComponent } from './compare/compare.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TbmComponent,
+    CompareComponent
   ],
   imports: [
     BrowserModule,
