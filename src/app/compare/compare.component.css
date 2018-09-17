@@ -1,3 +1,4 @@
 :host{
     background-color: bisque;
+    flex-grow: 1;
 }
