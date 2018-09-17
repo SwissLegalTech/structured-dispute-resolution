@@ -1,21 +1,26 @@
 :host {
-    background-color: bisque;
+    background-color: white;
     display: flex;
     flex-grow: 1;
     flex-flow: column;
+    overflow: scroll;
 }
 
-.plaintiff {
-    flex-grow: 5;
-    background-color: blueviolet;
+.tableHeadline {
+    font-size: 24px;
 }
 
-.judge {
-    flex-grow: 1;
-    background-color: brown;
+.headline {
+    font-weight: bold;
 }
 
-.defendant {
-    flex-grow: 5;
-    background-color: bisque;
+.content {
+    margin-bottom: 6px;
+}
+
+.checkItem {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

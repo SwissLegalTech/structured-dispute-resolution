@@ -1,58 +1,34 @@
 <table style="width:100%">
   <tr>
-    <th width="40%">Plaintiff</th>
-    <th width="20%">Judge</th>
-    <th width="40%">Defendant</th>
+    <th width="50%" class="tableHeadline">Claimant</th>
+    <th width="50%" class="tableHeadline">Defendant</th>
   </tr>
-</table>
-<table *ngFor="let subpoint of dataService.tbm_array[dataService.selectedIndex].subpoints">
-    <tr>
-      <td colspan="3">
-        {{subpoint.title}}
+  <tr *ngFor="let lawelement of dataService.lawelementArray">
+      <td width="50%">
+        <mat-card style="margin: 5px;" *ngIf="lawelement.claimant !== null">
+          <div class="headline">Fact</div>
+          <div class="content">{{lawelement.claimant.fact}}</div>
+          <div class="headline">Proof</div>
+          <div class="content">{{lawelement.claimant.proof}}</div>
+          <div class="headline">Legal opinion</div>
+          <div class="content">{{lawelement.claimant.legalOpinion}}</div>
+        </mat-card>
+        <div *ngIf="lawelement.claimant === null && !lawelement.disputed" class="checkItem">
+            <mat-icon style="font-size: 48px;">check</mat-icon>
+        </div>
+      </td>
+      <td width="50%">
+        <mat-card *ngIf="lawelement.defendant !== null">
+            <div class="headline">Fact</div>
+            <div class="content">{{lawelement.defendant.fact}}</div>
+            <div class="headline">Proof</div>
+            <div class="content">{{lawelement.defendant.proof}}</div>
+            <div class="headline">Legal opinion</div>
+            <div class="content">{{lawelement.defendant.legalOpinion}}</div>
+        </mat-card>
+        <div *ngIf="lawelement.defendant === null && !lawelement.disputed" class="checkItem">
+            <mat-icon style="font-size: 48px;">check</mat-icon>
+        </div>
       </td>
     </tr>
-    <tr>
-        <td width="40%">
-          <mat-card>
-            <h5>Facts</h5>
-            {{subpoint.plaintiff.facts}}
-            <h5>Legal</h5>
-            {{subpoint.plaintiff.legal}}
-            <h5>Proof</h5>
-            {{subpoint.defendant.proof}}
-          </mat-card>
-        </td>
-        <td width="20%">
-          <mat-card>
-              Judgecomment
-          </mat-card>
-        </td>
-        <td width="40%">
-          <mat-card>
-            <h5>Facts</h5>
-            {{subpoint.defendant.facts}}
-            <h5>Legal</h5>
-            {{subpoint.defendant.legal}}
-            <h5>Proof</h5>
-            {{subpoint.defendant.proof}}
-          </mat-card>
-        </td>
-      </tr>
 </table>
-<!--div class="plaintiff">
-  <div style="margin: 3px;" *ngFor="let subpoint of dataService.tbm_array[dataService.selectedIndex].subpoints">
-    <mat-card>
-        <h5>Facts</h5>
-        <div></div>
-          {{subpoint.plaintiff.facts}}
-          {{subpoint.plaintiff.facts}}
-          {{subpoint.plaintiff.facts}}
-    </mat-card>
-  </div>
-</div>
-<div class="judge">
-  judge
-</div>
-<div class="defendant">
-  defendant
-</div-->

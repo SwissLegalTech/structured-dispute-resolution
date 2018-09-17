@@ -1,78 +1,188 @@
 import { Injectable } from '@angular/core';
-import { Tbm } from './tbm';
+import { Lawelement } from './lawelement';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
-  public tbm_array: Tbm[] = [];
+
+  public lawelementArray: Lawelement[] = [];
   public selectedIndex: number = 0;
+  public showcaseArray = [];
 
   constructor() {
-    this.tbm_array = [
+    this.lawelementArray = [
       {
-        title: "Lease Contract",
-        subpoints: [
-          {
-            title: "subpoint 1",
-            plaintiff: {
-              facts: "The Claimant and the Respondend have entered into a lease agreement.",
-              legal: "There is a lease contract between the parties according to Sec. 535 BGB.",
-              proofs: []
-            },
-            defendant: {
-              facts: "Yes - undisputed.",
-              legal: "",
-              proofs: []
-            },
-            judge: {
-              temp: "judgecomment"
-            }
-          },
-        ]
+        claimant: {
+          fact: "I offered the respondend my appartment in Bahnhofstraße",
+          time: null, // 4th November
+          proof: "Rental Agreement",
+          legalOpinion: "This is a lease contract"
+        },
+        disputed: false,
+        defendant: null
       },
       {
-        title: "No heating",
-        subpoints: [
-          {
-            title: "subpoint 2",
-            plaintiff: {
-              facts: "The heating did not work.",
-              legal: "",
-              proofs: []
-            },
-            defendant: {
-              facts: "No, the heating did work properly.",
-              legal: "",
-              proofs: []
-            },
-            judge: {
-              temp: "judgecomment"
-            }
-          }
-        ]
+        claimant: {
+          fact: "We agreed upon a rent of 10.000 € a month",
+          time: null, // 4th November
+          proof: "Rental Agreement",
+          legalOpinion: "The respondant is obliged to pay the rent"
+        },
+        disputed: false,
+        defendant: null
       },
       {
-        title: "title 3",
-        subpoints: [
-          {
-            title: "subpoint 3",
-            plaintiff: {
-              facts: "fact of 3333 is blabla",
-              legal: "legal 3333 is blabla",
-              proofs: []
-            },
-            defendant: {
-              facts: "fact is 3333 blabla",
-              legal: "legal is 3333 blabla",
-              proofs: []
-            },
-            judge: {
-              temp: "judgecomment"
-            }
-          }
-        ]
+        claimant: null,
+        disputed: false,
+        defendant: {
+          fact: "The heating did not work",
+          time: null, // 1. - 31. Dezember
+          proof: "My boyfriend",
+          legalOpinion: ""
+        }
+      },
+      {
+        claimant: {
+          fact: "The claimant was still living in the apartment, the hotel bill is fake.",
+          time: null, // 7. bis 31. Dezember
+          proof: "Mrs. Miller",
+          legalOpinion: "You lived there, you can only set off 50 %"
+        },
+        disputed: true,
+        defendant: {
+          fact: "It was so cold, I had to move into a hotel and paid 10.000 € for it.",
+          time: null, // 7. bis 31. Dezember
+          proof: "Hotel bill",
+          legalOpinion: "I can set off the lease"
+        }
       }
+    ];
+
+    this.showcaseArray = [
+      [
+        {
+          claimant: {
+            fact: "I offered the respondend my appartment in Bahnhofstraße",
+            time: null, // 4th November
+            proof: "Rental Agreement",
+            legalOpinion: "This is a lease contract"
+          },
+          disputed: false,
+          defendant: null
+        }
+      ],
+      [
+        {
+          claimant: {
+            fact: "I offered the respondend my appartment in Bahnhofstraße",
+            time: null, // 4th November
+            proof: "Rental Agreement",
+            legalOpinion: "This is a lease contract"
+          },
+          disputed: false,
+          defendant: null
+        },
+        {
+          claimant: {
+            fact: "We agreed upon a rent of 10.000 € a month",
+            time: null, // 4th November
+            proof: "Rental Agreement",
+            legalOpinion: "The respondant is obliged to pay the rent"
+          },
+          disputed: false,
+          defendant: null
+        }
+      ],
+      [
+        {
+          claimant: {
+            fact: "I offered the respondend my appartment in Bahnhofstraße",
+            time: null, // 4th November
+            proof: "Rental Agreement",
+            legalOpinion: "This is a lease contract"
+          },
+          disputed: false,
+          defendant: null
+        },
+        {
+          claimant: {
+            fact: "We agreed upon a rent of 10.000 € a month",
+            time: null, // 4th November
+            proof: "Rental Agreement",
+            legalOpinion: "The respondant is obliged to pay the rent"
+          },
+          disputed: false,
+          defendant: null
+        },
+        {
+          claimant: null,
+          disputed: false,
+          defendant: {
+            fact: "The heating did not work",
+            time: null, // 1. - 31. Dezember
+            proof: "My boyfriend",
+            legalOpinion: ""
+          }
+        },
+        {
+          claimant: null,
+          disputed: true,
+          defendant: {
+            fact: "It was so cold, I had to move into a hotel and paid 10.000 € for it.",
+            time: null, // 7. bis 31. Dezember
+            proof: "Hotel bill",
+            legalOpinion: "I can set off the lease"
+          }
+        }
+      ],
+      [
+        {
+          claimant: {
+            fact: "I offered the respondend my appartment in Bahnhofstraße",
+            time: null, // 4th November
+            proof: "Rental Agreement",
+            legalOpinion: "This is a lease contract"
+          },
+          disputed: false,
+          defendant: null
+        },
+        {
+          claimant: {
+            fact: "We agreed upon a rent of 10.000 € a month",
+            time: null, // 4th November
+            proof: "Rental Agreement",
+            legalOpinion: "The respondant is obliged to pay the rent"
+          },
+          disputed: false,
+          defendant: null
+        },
+        {
+          claimant: null,
+          disputed: false,
+          defendant: {
+            fact: "The heating did not work",
+            time: null, // 1. - 31. Dezember
+            proof: "My boyfriend",
+            legalOpinion: ""
+          }
+        },
+        {
+          claimant: {
+            fact: "The claimant was still living in the apartment, the hotel bill is fake.",
+            time: null, // 7. bis 31. Dezember
+            proof: "Mrs. Miller",
+            legalOpinion: "You lived there, you can only set off 50 %"
+          },
+          disputed: true,
+          defendant: {
+            fact: "It was so cold, I had to move into a hotel and paid 10.000 € for it.",
+            time: null, // 7. bis 31. Dezember
+            proof: "Hotel bill",
+            legalOpinion: "I can set off the lease"
+          }
+        }
+      ]
     ]
   }
   setSelectedIndex(index: number) {
