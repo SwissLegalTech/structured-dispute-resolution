@@ -21,10 +21,10 @@ The LEXEM e-Management-System essentially assists judges in their decision-makin
 
 By optimizing the legal communication between parties and judges, the latter will require less time to resolve individual cases. This will improve access to justice in the long-term, as more legal disputes can be resolved in a shorter period of time.
 
-### 3. Market and Scalability
+### 4. Market and Scalability
 The German legal services market alone created a turnover of 23.241 Billion EUR in 2015 (cf. pos. 69.1, 'Jahrbuch des statistischen Bundesamtes 2017'). Taking into consideration our solution will mostly apply to non-complex legal proceedings, excluding 'large' and 'specialized' cases (the top 100 German law firms had a turnover of 5.91 Billion EUR in 2016/2017, cf. JUVE Kanzleiumsätze 2016/2017), it could still - conservatively - be assumed that the total addressable market amouts to about 10 Billion EUR.
 
 As the logic of our plattform applies to any constellation where legal rules apply and parties raise legal and factual arguments, our solution can be used in various legal contexs (e.g. civil and common law jurisdictions, arbitration)
 
-### 4. SAS Business Model
+### 5. SAS Business Model
 LEXEM will be provided as software as a service.
