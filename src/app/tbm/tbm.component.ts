@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-tbm',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TbmComponent implements OnInit {
 
-  constructor() { }
+  constructor(_data: DataService) { }
 
   ngOnInit() {
   }
