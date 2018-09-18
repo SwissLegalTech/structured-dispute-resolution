@@ -8,14 +8,13 @@ Each year in Germany alone about 1.3 Million first instance civil cases are file
 ### 2. The Solution
 We bring structure into the mess. The LEXEM e-Management-System is a live platform, that brings claimant, respondent and deciding judge together.
 
-The claimant will be able to file its claim, describe the relevant facts and proofs, and provide its legal reasoning entirely online. The respondent can then respond to the issues addressed by the claimant and formulate its defenses on the platform. Due to the structure of the online platform, the parties are required to present their arguments in a well-organized way. In addition, a detailed timeline of the dispute will automatically be created.
+The claimant will be able to file its claim, describe the relevant facts and proofs, and provide its legal reasoning entirely online. The respondent can then respond to the issues addressed by the claimant and formulate its defenses on the platform. Due to the structure of the online platform, the parties are required to present their arguments in a well-organized way.
 
 The deciding judge can review the process and make private annotations at any time. Furthermore, when the parties have finally submitted their arguments, the judge will have the possibility to (re)structure the parties'arguments in a way that he/she considers most appropriate. 
 
 ### 3. The Advantages
 The LEXEM e-Management-System essentially assists judges in their decision-making process by:
 -	encouraging the parties to clearly structure their arguments;
--	providing an online timeline of the dispute;
 -	allowing judges work on the structured information provided; and
 - thus, immensly speeding up the legal decision process.
 
