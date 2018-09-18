@@ -6,14 +6,14 @@
         <th width="50%" class="tableHeadline">
           <div class="smallheadline">
             <div class="expanded"></div>
-            <div>claimant</div>
+            <div>Claimant</div>
             <div class="expanded"></div>
           </div>
         </th>
         <th width="50%" class="tableHeadline">
           <div class="smallheadline">
             <div class="expanded"></div>
-            <div>defendant</div>
+            <div>Respondent</div>
             <div class="expanded"></div>
           </div>
         </th>
@@ -42,10 +42,13 @@
             <mat-icon style="font-size: 48px;">check</mat-icon>
           </div>
           <div *ngIf="state === 'claimant'">
-            <div *ngIf="lawelement.disputed === null && lawIndex === i">
-              <button mat-raised-button color="black" (click)="agreeToFact(lawelement)">Agree</button>
-              <button mat-raised-button color="black" (click)="openDialog()">Disagree</button>
-            </div>
+              <div *ngIf="lawelement.disputed === null && lawIndex === i" class="buttons">
+                  <div class="expanded"></div>
+                  <button mat-raised-button color="black" (click)="agreeToFact(lawelement)">Agree</button>
+                  <div style="min-width: 10px;"></div>
+                  <button mat-raised-button color="black" (click)="openDialog()">Dispute</button>
+                  <div class="expanded"></div>
+                </div>
           </div>
         </td>
         <td width="50%">
@@ -73,7 +76,7 @@
               <div class="expanded"></div>
               <button mat-raised-button color="black" (click)="agreeToFact(lawelement)">Agree</button>
               <div style="min-width: 10px;"></div>
-              <button mat-raised-button color="black" (click)="openDialog()">Disagree</button>
+              <button mat-raised-button color="black" (click)="openDialog()">Dispute</button>
               <div class="expanded"></div>
             </div>
           </div>
@@ -83,16 +86,16 @@
         <td width="50%">
           <div class="buttons" *ngIf="state === 'claimant'">
             <div class="expanded"></div>
-            <div><button mat-raised-button color="black" (click)="openDialog()">Add</button></div>
+            <div><button mat-raised-button color="black" (click)="openDialog()">Add fact</button></div>
             <div style="min-width: 10px;"></div>
-            <div><button mat-raised-button color="black" (click)="submitToDefendant()">Submit to defendant</button></div>
+            <div><button mat-raised-button color="black" (click)="submitToDefendant()">Submit to respondent</button></div>
             <div class="expanded"></div>
           </div>
         </td>
         <td width="50%">
           <div class="buttons" *ngIf="state === 'defendant'">
             <div class="expanded"></div>
-            <div><button mat-raised-button color="black" (click)="openDialog()">Add</button></div>
+            <div><button mat-raised-button color="black" (click)="openDialog()">Add fact</button></div>
             <div style="min-width: 10px;"></div>
             <div><button mat-raised-button color="black" (click)="submitToClaimant()">Submit to claimant</button></div>
             <div class="expanded"></div>
