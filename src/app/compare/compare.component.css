@@ -6,6 +6,13 @@
     overflow: scroll;
 }
 
+.printbutton {
+    width: 100%;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+}
+
 .timestamp {
     text-align: end;
     color: gray;
