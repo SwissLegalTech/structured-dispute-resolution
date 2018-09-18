@@ -16,6 +16,11 @@
     max-width: 1024px;
 }
 
+.objective {
+    font-size: 18px;
+    font-weight: 100px !important;
+}
+
 .printbutton {
     width: 100%;
     display: flex;
@@ -31,17 +36,17 @@
 
 .timestamp {
     text-align: end;
-    color: gray;
+    color: black;
     width: 100%;
     margin-bottom: 10px;
 }
 
 .undisputed {
-    background-color: lightgreen;
+    background-color: #C8E6C9;
 }
 
 .disputed {
-    background-color: lightcoral;
+    background-color: #FFCDD2;
 }
 
 .tableHeadline {

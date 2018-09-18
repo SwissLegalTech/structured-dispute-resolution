@@ -22,7 +22,7 @@
         <th width="50%" class="tableHeadline">
           <div class="smallheadline">
             <div class="expanded"></div>
-            <div style="font-size: 16px; font-weight: 500; padding-top: 15px; padding-bottom: 15px;">
+            <div style="font-size: 18px; font-weight: 500; padding-top: 15px; padding-bottom: 15px;">
               <table>
                 <tr>
                   <td>Monika Müller</td>
@@ -44,7 +44,7 @@
         <th width="50%" class="tableHeadline">
           <div class="smallheadline">
             <div class="expanded"></div>
-            <div style="font-size: 16px; font-weight: 500; padding-top: 15px; padding-bottom: 15px;">
+            <div style="font-size: 18px; font-weight: 500; padding-top: 15px; padding-bottom: 15px;">
               <table>
                 <tr>
                   <td>Bert Bühler</td>
@@ -66,13 +66,13 @@
       </tr>
       <tr>
         <th width="50%" class="tableHeadline">
-          <mat-card>
-            <div class="headline">Objective: Payment of 1,000.- EUR.</div>
+          <mat-card style="margin: 5px;">
+            <div class="objective">Objective: Payment of 1,000.- EUR.</div>
           </mat-card>
         </th>
         <th width="50%" class="tableHeadline">
           <mat-card>
-            <div class="headline">Objective: Dismissal of action.</div>
+            <div class="objective">Objective: Dismissal of action.</div>
           </mat-card>
         </th>
       </tr>
@@ -142,7 +142,7 @@
       </tr>
       <tr>
         <td width="50%">
-          <div class="buttons" *ngIf="state === 'claimant'">
+          <div class="buttons" *ngIf="state === 'claimant'" style="padding-top: 15px;">
             <div class="expanded"></div>
             <div><button mat-raised-button color="black" (click)="openDialog()">Add fact</button></div>
             <div style="min-width: 10px;"></div>
@@ -151,7 +151,7 @@
           </div>
         </td>
         <td width="50%">
-          <div class="buttons" *ngIf="state === 'defendant'">
+          <div class="buttons" *ngIf="state === 'defendant'" style="padding-top: 15px;">
             <div class="expanded"></div>
             <div><button mat-raised-button color="black" (click)="openDialog()">Add fact</button></div>
             <div style="min-width: 10px;"></div>
