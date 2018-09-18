@@ -7,6 +7,7 @@
     <td width="50%">
       <mat-card style="margin: 5px;" *ngIf="lawelement.claimant !== null" [class.undisputed]="lawelement.disputed === false"
         [class.disputed]="lawelement.disputed === true">
+        <div class="timestamp">{{lawelement.claimant.creationDate | date:'medium'}}</div>
         <div class="headline">Fact</div>
         <div class="content">{{lawelement.claimant.fact}}</div>
         <div class="headline">Time</div>
