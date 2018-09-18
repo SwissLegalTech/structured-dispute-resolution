@@ -17,12 +17,5 @@ export class TbmComponent implements OnInit {
   ngOnInit() {
   }
 
-  clickAddDocument() {
-    console.log("document added");
-  }
 
-  selectDocument(index: number) {
-    this.dataService.setSelectedIndex(index);
-    console.log("select document "+index);
-  }
 }
