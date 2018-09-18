@@ -1,4 +1,4 @@
-#LEXEM
+##LEXEM
 ## The e-Management-System: Inefficiency ends here.
 ### 1. The Problem
 Law is about language and language about communication. Yet, legal communication is often a mess. This mess is mainly caused by inefficient communication in legal proceedings. Instead of establishing a factual base and exchanging legal opinions ad hoc, court documents are sent out as paper documents and regularly have unstructured contents. This causes a massive delay in legal decision-making and very often burries the presiding judge in paper-work.
