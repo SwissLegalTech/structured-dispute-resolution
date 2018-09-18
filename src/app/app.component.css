@@ -1,6 +1,6 @@
 .mainwindow{
     width: 1024px;
-    height: 800px;
+    height: 100%;
     background-color: black;
     display: flex;
     flex-flow: row;
