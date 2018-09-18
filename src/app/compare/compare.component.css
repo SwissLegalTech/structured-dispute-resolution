@@ -6,6 +6,13 @@
     overflow: scroll;
 }
 
+.timestamp {
+    text-align: end;
+    color: gray;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
 .undisputed {
     background-color: lightgreen;
 }

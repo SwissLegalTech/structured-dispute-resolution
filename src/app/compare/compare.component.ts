@@ -71,8 +71,6 @@ export class CompareComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      //console.log('The dialog was closed');
-      //console.log(result);
       if(this.dataService.lawelementArray.length <= this.lawIndex) {
         this.dataService.lawelementArray.push({
           claimant: null,
@@ -87,7 +85,8 @@ export class CompareComponent implements OnInit {
           fact: result.fact,
           time: result.time,
           proof: result.proof,
-          legalOpinion: result.legalOpinion
+          legalOpinion: result.legalOpinion,
+          creationDate: new Date()
         }
       }
       if(this.state === "defendant") {
@@ -95,7 +94,8 @@ export class CompareComponent implements OnInit {
           fact: result.fact,
           time: result.time,
           proof: result.proof,
-          legalOpinion: result.legalOpinion
+          legalOpinion: result.legalOpinion,
+          creationDate: new Date()
         }
       }
       this.lawIndex++;
@@ -111,7 +111,7 @@ export class CompareComponent implements OnInit {
 export class DialogOverviewExampleDialog {
 
   private fact = "";
-  private time = Date();
+  private time = null;
   private proof = "";
   private legalOpinion = "";
 
@@ -128,7 +128,8 @@ export class DialogOverviewExampleDialog {
       fact: this.fact,
       time: this.time,
       proof: this.proof,
-      legalOpinion: this.legalOpinion
+      legalOpinion: this.legalOpinion,
+      creationDate: Date()
     });
   }
 

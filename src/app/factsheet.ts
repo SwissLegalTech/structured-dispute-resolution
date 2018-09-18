@@ -3,4 +3,5 @@ export interface Factsheet {
     time: Date;
     proof: string;
     legalOpinion: string;
+    creationDate: Date;
 }
