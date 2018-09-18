@@ -1,89 +1,116 @@
-<table style="width:100%">
-  <tr>
-    <th width="50%" class="tableHeadline">claimant</th>
-    <th width="50%" class="tableHeadline">defendant</th>
-  </tr>
-  <tr *ngFor="let lawelement of dataService.lawelementArray; let i = index;">
-    <td width="50%">
-      <mat-card style="margin: 5px;" *ngIf="lawelement.claimant !== null" [class.undisputed]="lawelement.disputed === false"
-        [class.disputed]="lawelement.disputed === true">
-        <div class="timestamp">{{lawelement.claimant.creationDate | date:'medium'}}</div>
-        <div class="headline">Fact</div>
-        <div class="content">{{lawelement.claimant.fact}}</div>
-        <div class="headline">Time</div>
-        <div class="content">{{lawelement.claimant.time | date:'mediumDate'}}</div>
-        <div class="headline">Proof</div>
-        <div class="content">{{lawelement.claimant.proof}}</div>
-        <div class="headline">Legal opinion</div>
-        <div class="content">{{lawelement.claimant.legalOpinion}}</div>
-        <div class="headline" *ngIf="lawelement.claimant.attachments.length > 0">Attachments</div>
-        <div class="content"><div *ngFor="let item of lawelement.claimant.attachments">
-            <mat-icon>picture_as_pdf</mat-icon>
-        </div></div>
-      </mat-card>
-      <div *ngIf="lawelement.claimant === null && lawelement.disputed == false" class="checkItem">
-        <mat-icon style="font-size: 48px;">check</mat-icon>
-      </div>
-      <div *ngIf="state === 'claimant'">
-        <div *ngIf="lawelement.disputed === null && lawIndex === i">
-          <button mat-raised-button color="black" (click)="agreeToFact(lawelement)">Agree</button>
-          <button mat-raised-button color="black" (click)="openDialog()">Disagree</button>
-        </div>
-      </div>
-    </td>
-    <td width="50%">
-      <mat-card *ngIf="lawelement.defendant !== null" [class.undisputed]="lawelement.disputed === false"
-        [class.disputed]="lawelement.disputed === true">
-        <div class="timestamp">{{lawelement.defendant.creationDate | date:'medium'}}</div>
-        <div class="headline">Fact</div>
-        <div class="content">{{lawelement.defendant.fact}}</div>
-        <div class="headline">Proof</div>
-        <div class="content">{{lawelement.defendant.proof}}</div>
-        <div class="headline">Legal opinion</div>
-        <div class="content">{{lawelement.defendant.legalOpinion}}</div>
-        <div class="headline" *ngIf="lawelement.defendant.attachments.length > 0">Attachments</div>
-        <div class="content"><div *ngFor="let item of lawelement.defendant.attachments">
-            <mat-icon *ngIf="item === 'pdf'">picture_as_pdf</mat-icon>
-        </div></div>
-      </mat-card>
-      <div *ngIf="lawelement.defendant === null && lawelement.disputed == false" class="checkItem">
-        <mat-icon style="font-size: 48px;">check</mat-icon>
-      </div>
-      <div *ngIf="state === 'defendant'">
-        <div *ngIf="lawelement.disputed === null && lawIndex === i">
-          <button mat-raised-button color="black" (click)="agreeToFact(lawelement)">Agree</button>
-          <button mat-raised-button color="black" (click)="openDialog()">Disagree</button>
-        </div>
-      </div>
-    </td>
-  </tr>
-  <tr>
-    <td width="50%">
-      <div class="buttons" *ngIf="state === 'claimant'">
-        <div class="expanded"></div>
-        <div><button mat-fab color="black" (click)="openDialog()">Add</button></div>
-        <div><button mat-raised-button color="black" (click)="submitToDefendant()">Submit to defendant</button></div>
-        <div class="expanded"></div>
-      </div>
-    </td>
-    <td width="50%">
-      <div class="buttons" *ngIf="state === 'defendant'">
-        <div class="expanded"></div>
-        <div><button mat-fab color="black" (click)="openDialog()">Add</button></div>
-        <div><button mat-raised-button color="black" (click)="submitToClaimant()">Submit to claimant</button></div>
-        <div class="expanded"></div>
-      </div>
-    </td>
-  </tr>
-  <tr>
-    <td colspan="2">
-      <div class="printbutton">
-        <div class="expanded"></div>
-        <button mat-raised-button color="black">
-          <mat-icon>print</mat-icon>
-        </button>
-        <div class="expanded"></div>
-      </div>
-    </td>
-  </tr>
-</table>
+<div class="mainframe">
+  <div class="expanded"></div>
+  <div class="tablecontainer">
+    <table style="width:100%">
+      <tr>
+        <th width="50%" class="tableHeadline">
+          <div class="smallheadline">
+            <div class="expanded"></div>
+            <div>claimant</div>
+            <div class="expanded"></div>
+          </div>
+        </th>
+        <th width="50%" class="tableHeadline">
+          <div class="smallheadline">
+            <div class="expanded"></div>
+            <div>defendant</div>
+            <div class="expanded"></div>
+          </div>
+        </th>
+      </tr>
+      <tr *ngFor="let lawelement of dataService.lawelementArray; let i = index;">
+        <td width="50%">
+          <mat-card style="margin: 5px;" *ngIf="lawelement.claimant !== null" [class.undisputed]="lawelement.disputed === false"
+            [class.disputed]="lawelement.disputed === true">
+            <div class="timestamp">{{lawelement.claimant.creationDate | date:'medium'}}</div>
+            <div class="headline">Fact</div>
+            <div class="content">{{lawelement.claimant.fact}}</div>
+            <div class="headline">Time</div>
+            <div class="content">{{lawelement.claimant.time | date:'mediumDate'}}</div>
+            <div class="headline">Proof</div>
+            <div class="content">{{lawelement.claimant.proof}}</div>
+            <div class="headline">Legal opinion</div>
+            <div class="content">{{lawelement.claimant.legalOpinion}}</div>
+            <div class="headline" *ngIf="lawelement.claimant.attachments.length > 0">Attachments</div>
+            <div class="content">
+              <div *ngFor="let item of lawelement.claimant.attachments">
+                <mat-icon>picture_as_pdf</mat-icon>
+              </div>
+            </div>
+          </mat-card>
+          <div *ngIf="lawelement.claimant === null && lawelement.disputed == false" class="checkItem">
+            <mat-icon style="font-size: 48px;">check</mat-icon>
+          </div>
+          <div *ngIf="state === 'claimant'">
+            <div *ngIf="lawelement.disputed === null && lawIndex === i">
+              <button mat-raised-button color="black" (click)="agreeToFact(lawelement)">Agree</button>
+              <button mat-raised-button color="black" (click)="openDialog()">Disagree</button>
+            </div>
+          </div>
+        </td>
+        <td width="50%">
+          <mat-card *ngIf="lawelement.defendant !== null" [class.undisputed]="lawelement.disputed === false"
+            [class.disputed]="lawelement.disputed === true">
+            <div class="timestamp">{{lawelement.defendant.creationDate | date:'medium'}}</div>
+            <div class="headline">Fact</div>
+            <div class="content">{{lawelement.defendant.fact}}</div>
+            <div class="headline">Proof</div>
+            <div class="content">{{lawelement.defendant.proof}}</div>
+            <div class="headline">Legal opinion</div>
+            <div class="content">{{lawelement.defendant.legalOpinion}}</div>
+            <div class="headline" *ngIf="lawelement.defendant.attachments.length > 0">Attachments</div>
+            <div class="content">
+              <div *ngFor="let item of lawelement.defendant.attachments">
+                <mat-icon *ngIf="item === 'pdf'">picture_as_pdf</mat-icon>
+              </div>
+            </div>
+          </mat-card>
+          <div *ngIf="lawelement.defendant === null && lawelement.disputed == false" class="checkItem">
+            <mat-icon style="font-size: 48px;">check</mat-icon>
+          </div>
+          <div *ngIf="state === 'defendant'">
+            <div *ngIf="lawelement.disputed === null && lawIndex === i" class="buttons">
+              <div class="expanded"></div>
+              <button mat-raised-button color="black" (click)="agreeToFact(lawelement)">Agree</button>
+              <div style="min-width: 10px;"></div>
+              <button mat-raised-button color="black" (click)="openDialog()">Disagree</button>
+              <div class="expanded"></div>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td width="50%">
+          <div class="buttons" *ngIf="state === 'claimant'">
+            <div class="expanded"></div>
+            <div><button mat-raised-button color="black" (click)="openDialog()">Add</button></div>
+            <div style="min-width: 10px;"></div>
+            <div><button mat-raised-button color="black" (click)="submitToDefendant()">Submit to defendant</button></div>
+            <div class="expanded"></div>
+          </div>
+        </td>
+        <td width="50%">
+          <div class="buttons" *ngIf="state === 'defendant'">
+            <div class="expanded"></div>
+            <div><button mat-raised-button color="black" (click)="openDialog()">Add</button></div>
+            <div style="min-width: 10px;"></div>
+            <div><button mat-raised-button color="black" (click)="submitToClaimant()">Submit to claimant</button></div>
+            <div class="expanded"></div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <div class="printbutton">
+            <div class="expanded"></div>
+            <button mat-raised-button color="black">
+              <mat-icon>print</mat-icon> PRINT
+            </button>
+            <div class="expanded"></div>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div class="expanded"></div>
+</div>

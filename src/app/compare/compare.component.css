@@ -6,8 +6,24 @@
     overflow: scroll;
 }
 
+.mainframe {
+    display: flex;
+    flex-flow: row;
+}
+
+.tablecontainer {
+    flex-grow: 100000000;
+    max-width: 1024px;
+}
+
 .printbutton {
     width: 100%;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+}
+
+.smallheadline {
     display: flex;
     flex-flow: row;
     align-items: center;
