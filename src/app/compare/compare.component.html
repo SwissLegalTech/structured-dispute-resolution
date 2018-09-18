@@ -18,6 +18,64 @@
           </div>
         </th>
       </tr>
+      <tr>
+        <th width="50%" class="tableHeadline">
+          <div class="smallheadline">
+            <div class="expanded"></div>
+            <div style="font-size: 16px; font-weight: 500; padding-top: 15px; padding-bottom: 15px;">
+              <table>
+                <tr>
+                  <td>Monika Müller</td>
+                </tr>
+                <tr>
+                  <td>Bahnhofstraße 7</td>
+                </tr>
+                <tr>
+                  <td>69115 Heidelberg</td>
+                </tr>
+                <tr>
+                  <td>monika.m@claimant.com</td>
+                </tr>
+              </table>
+            </div>
+            <div class="expanded"></div>
+          </div>
+        </th>
+        <th width="50%" class="tableHeadline">
+          <div class="smallheadline">
+            <div class="expanded"></div>
+            <div style="font-size: 16px; font-weight: 500; padding-top: 15px; padding-bottom: 15px;">
+              <table>
+                <tr>
+                  <td>Bert Bühler</td>
+                </tr>
+                <tr>
+                  <td>Wörthstraße 12</td>
+                </tr>
+                <tr>
+                  <td>69115 Heidelberg</td>
+                </tr>
+                <tr>
+                  <td>bert.b@respondent.com</td>
+                </tr>
+              </table>
+            </div>
+            <div class="expanded"></div>
+          </div>
+        </th>
+      </tr>
+      <tr>
+        <th width="50%" class="tableHeadline">
+          <mat-card>
+            <div class="headline">Objective: Payment of 1,000.- EUR.</div>
+          </mat-card>
+        </th>
+        <th width="50%" class="tableHeadline">
+          <mat-card>
+            <div class="headline">Objective: Dismissal of action.</div>
+          </mat-card>
+        </th>
+      </tr>
       <tr *ngFor="let lawelement of dataService.lawelementArray; let i = index;">
         <td width="50%">
           <mat-card style="margin: 5px;" *ngIf="lawelement.claimant !== null" [class.undisputed]="lawelement.disputed === false"
@@ -42,13 +100,13 @@
             <mat-icon style="font-size: 48px;">check</mat-icon>
           </div>
           <div *ngIf="state === 'claimant'">
-              <div *ngIf="lawelement.disputed === null && lawIndex === i" class="buttons">
-                  <div class="expanded"></div>
-                  <button mat-raised-button color="black" (click)="agreeToFact(lawelement)">Agree</button>
-                  <div style="min-width: 10px;"></div>
-                  <button mat-raised-button color="black" (click)="openDialog()">Dispute</button>
-                  <div class="expanded"></div>
-                </div>
+            <div *ngIf="lawelement.disputed === null && lawIndex === i" class="buttons">
+              <div class="expanded"></div>
+              <button mat-raised-button color="black" (click)="agreeToFact(lawelement)">Agree</button>
+              <div style="min-width: 10px;"></div>
+              <button mat-raised-button color="black" (click)="openDialog()">Dispute</button>
+              <div class="expanded"></div>
+            </div>
           </div>
         </td>
         <td width="50%">
