@@ -71,7 +71,7 @@
           </mat-card>
         </th>
         <th width="50%" class="tableHeadline">
-          <mat-card>
+          <mat-card style="margin: 5px;">
             <div class="objective">Objective: Dismissal of action.</div>
           </mat-card>
         </th>
@@ -110,11 +110,13 @@
           </div>
         </td>
         <td width="50%">
-          <mat-card *ngIf="lawelement.defendant !== null" [class.undisputed]="lawelement.disputed === false"
+          <mat-card style="margin: 5px;" *ngIf="lawelement.defendant !== null" [class.undisputed]="lawelement.disputed === false"
             [class.disputed]="lawelement.disputed === true">
             <div class="timestamp">{{lawelement.defendant.creationDate | date:'medium'}}</div>
             <div class="headline">Fact</div>
             <div class="content">{{lawelement.defendant.fact}}</div>
+            <div class="headline">Time</div>
+            <div class="content">{{lawelement.defendant.time | date:'mediumDate'}}</div>
             <div class="headline">Proof</div>
             <div class="content">{{lawelement.defendant.proof}}</div>
             <div class="headline">Legal opinion</div>
