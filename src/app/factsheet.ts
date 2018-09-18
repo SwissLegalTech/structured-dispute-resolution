@@ -4,4 +4,5 @@ export interface Factsheet {
     proof: string;
     legalOpinion: string;
     creationDate: Date;
+    attachments: string[];
 }

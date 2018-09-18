@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
+import { FileSelectDirective } from 'ng2-file-upload';
 
 import {
   MatButtonModule, 
@@ -24,7 +25,8 @@ import { CompareComponent, DialogOverviewExampleDialog } from './compare/compare
     AppComponent,
     TbmComponent,
     CompareComponent,
-    DialogOverviewExampleDialog
+    DialogOverviewExampleDialog,
+    FileSelectDirective
   ],
   imports: [
     BrowserModule,

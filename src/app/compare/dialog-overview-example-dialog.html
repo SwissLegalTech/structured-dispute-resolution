@@ -17,6 +17,9 @@
         <mat-form-field class="example-full-width" style="width: 100%">
             <input matInput placeholder="Legal opinion" [(ngModel)]="legalOpinion" [ngModelOptions]="{standalone: true}">
         </mat-form-field>
+
+        <input type="file" name="photo" ng2FileSelect [uploader]="uploader" (click)="addItem()" />
+        <div style="height: 20px;"></div>
     </form>
     <button mat-raised-button color="black" (click)="closeDialog()">Add fact</button>
 </div>

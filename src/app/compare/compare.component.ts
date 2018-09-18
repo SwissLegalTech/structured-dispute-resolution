@@ -1,6 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { DataService } from '../data.service';
 import { MatDialogRef, MAT_DIALOG_DATA, MatDialog } from '@angular/material';
+import {  FileUploader, FileSelectDirective } from 'ng2-file-upload/ng2-file-upload';
 
 export interface DialogData {
   animal: string;
@@ -86,7 +87,8 @@ export class CompareComponent implements OnInit {
           time: result.time,
           proof: result.proof,
           legalOpinion: result.legalOpinion,
-          creationDate: new Date()
+          creationDate: new Date(),
+          attachments: result.attachments
         }
       }
       if(this.state === "defendant") {
@@ -95,7 +97,8 @@ export class CompareComponent implements OnInit {
           time: result.time,
           proof: result.proof,
           legalOpinion: result.legalOpinion,
-          creationDate: new Date()
+          creationDate: new Date(),
+          attachments: result.attachments
         }
       }
       this.lawIndex++;
@@ -110,10 +113,13 @@ export class CompareComponent implements OnInit {
 })
 export class DialogOverviewExampleDialog {
 
+  public uploader: FileUploader = new FileUploader(null);
+
   private fact = "";
   private time = null;
   private proof = "";
   private legalOpinion = "";
+  private att = [];
 
   constructor(
     public dialogRef: MatDialogRef<DialogOverviewExampleDialog>,
@@ -124,13 +130,19 @@ export class DialogOverviewExampleDialog {
   }
 
   closeDialog() {
+    console.log(this.uploader);
     this.dialogRef.close({
       fact: this.fact,
       time: this.time,
       proof: this.proof,
       legalOpinion: this.legalOpinion,
-      creationDate: Date()
+      creationDate: Date(),
+      attachments: this.att
     });
+  }
+
+  addItem(){
+    this.att.push('pdf');
   }
 
 }
